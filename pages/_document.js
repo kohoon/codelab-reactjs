@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -18,11 +18,10 @@ export default class MyDocument extends Document {
    
     render() {
         return (
-            <html lang="ko">
+            <Html lang="ko">
                 <Head>
                     <meta charset="utf-8" />
                     <title>React Practice</title>
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
                     {/* 스타일시트 링크 */}
                     {/* 웹폰트 importing */}
                     {/* 메타 설정 */}
@@ -31,7 +30,7 @@ export default class MyDocument extends Document {
                     <Main /> {/* Router에 해당하는 페이지가 렌더링 되는 부분 */}
                     <NextScript /> {/* Next 관련된 JS 파일 */}
                 </body>
-            </html>
+            </Html>
         )
     }
 }

@@ -1,0 +1,33 @@
+.card-list-container {
+    width: $full-w;
+    height: $full-h;
+    background-color: $bg-gray;
+    &.wrapper {
+        margin: 0 auto;
+        width: 860px;
+        height: $full-h;
+        background-color: $white;
+        border-left: 1px solid $bd-gray;
+        border-right: 1px solid $bd-gray;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        .search-input {
+            width: 200px;
+            height: 40px;
+        }
+        .btn-black {
+            width: 100px;
+            height: 40px;
+            color: $white;
+            background-color: $black;
+            border-radius: 5px;
+        }
+        .card {
+            @include card(200px, 200px);
+            .name {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
