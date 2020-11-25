@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Name from '../components/name';
-import Job from '../components/job';
+import Link from 'next/link';
+import Router from 'next/router';
 
 // state 기능 및 Lifecycle 기능 사용할 수 없었음
 // Hook의 등장으로 클래스형 보다 간단하고, 메모리자원 적게 사용하면서 동일한 기능 구현 가능해짐
@@ -12,6 +13,10 @@ const FunctionalComponent = (props) => {
     // 설정한 state, setState
 
     const handleClickBtn = (val) => {
+        // console.log(e.target);
+        setName(val)
+    };
+    const handleClickBtn2 = (val) => {
         // console.log(e.target);
         setName(val)
     };
@@ -38,14 +43,15 @@ const FunctionalComponent = (props) => {
             <h1>함수형 컴포넌트</h1>
             <Name
                 name={name}
-                onClickCB={handleClickBtn}
             />
             <button onClick={() => handleClickBtn('김개똥')}>변경</button>
-            <Job
-                job={job}
-                onClickCB={handleClickBtn}
-            />
-            <button onClick={() => handleClickBtn('경찰')}>변경</button>
+            <div>
+                <Link href='/class'>
+                    <a>함수형 컴포넌트로 이동</a>
+                </Link>
+                <button onClick={() => Router.push('/class')}>함수형 컴포넌트로 이동</button>
+            </div>
+            
             {/* val을 받아오기 위해서 onClick={handleClickBtn} 이 아닌 onClick={() => handleClickBtn(val)}로 사용*/}
         </div>
     )

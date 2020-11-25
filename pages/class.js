@@ -64,7 +64,7 @@ class ClassComponent extends Component {
 
         return (
             <div>
-                <h1>클래스형 컴포넌트</h1>
+                <h1 className='txt-main'>클래스형 컴포넌트</h1>
                 <h2>{key}</h2>
                 <h2>{name}</h2>
                 <button onClick={this.handleClick}>클릭</button>
